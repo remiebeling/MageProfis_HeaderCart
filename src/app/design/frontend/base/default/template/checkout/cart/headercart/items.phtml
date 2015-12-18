@@ -1,0 +1,16 @@
+<?php $_items = $this->getRecentItems(); ?>
+<ul>
+    <?php foreach ($_items as $_item): ?>
+        <?php echo $this->getItemHtml($_item) ?>
+    <?php endforeach; ?>
+</ul>
+<div class="headercart-totals clearfix">
+    <span class="label"><?php echo $this->__('Subtotal')?>:</span>
+    <span class="value">
+        <?php echo Mage::helper('core')->currency($this->getSubtotal(true), true, false); ?>
+    </span>    
+</div>
+<div class="actions">
+    <a href="<?php echo Mage::getUrl('checkout/cart'); ?>" class="col-md-8 col-lg-8 show-cart-link" ><?php echo $this->__('show cart') ?></a>
+    <a href="<?php echo Mage::getUrl('checkout/onepage'); ?>" class="col-md-4 col-lg-4 proceed-checkout-link"><?php echo $this->__('checkout') ?></a>
+</div>	

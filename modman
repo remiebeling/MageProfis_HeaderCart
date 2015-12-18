@@ -1,0 +1,6 @@
+src/app/code/local/MageProfis/HeaderCart                                            app/code/local/MageProfis/HeaderCart
+src/app/design/frontend/base/default/layout/mageprofis-headercart.xml               app/design/frontend/base/default/layout/mageprofis-headercart.xml
+src/app/design/frontend/base/default/template/checkout/cart/headercart              app/design/frontend/base/default/template/checkout/cart/headercart
+src/app/etc/modules/MageProfis_HeaderCart.xml                                       app/etc/modules/MageProfis_HeaderCart.xml
+src/skin/frontend/base/default/js/mageprofis/headercart                             skin/frontend/base/default/js/mageprofis/headercart
+src/skin/frontend/base/default/css/mageprofis/headercart                            skin/frontend/base/default/css/mageprofis/headercart

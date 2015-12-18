@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addCss">
+                <file>css/mageprofis/headercart/headercart.css</file>
+            </action>
+        </reference>
+        <reference name="top.container">
+            <block type="headercart/cart" name="header.cart" template="checkout/cart/headercart/cart.phtml" />
+        </reference>
+    </default>
+    
+    <mageprofis_headercart_index_index>
+        <block type="checkout/cart_sidebar" name="cart.header.items" template="checkout/cart/headercart/items.phtml" output="toHtml">
+            <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/headercart/item/default.phtml</template></action>
+            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/headercart/item/default.phtml</template></action>
+            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/headercart/item/default.phtml</template></action>
+            <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
+                <label>Shopping Cart Sidebar Extra Actions</label>
+            </block>
+        </block>
+    </mageprofis_headercart_index_index>
+</layout>

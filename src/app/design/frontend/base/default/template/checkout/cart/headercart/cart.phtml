@@ -1,0 +1,59 @@
+<?php $_items_count = Mage::helper('checkout/cart')->getItemsCount(); ?>
+<div class="header-cart col-md-2">
+    <div class="cart-heading">
+        <a href="<?php echo Mage::helper('checkout/cart')->getCartUrl(); ?>" class="title">
+            <?php echo $this->getCartTitle(); ?>
+        </a>
+        <span class="amount">
+            <?php echo Mage::helper('core')->currency($this->getSubtotal(true), true, false); ?> 
+        </span>
+    </div>
+    <div id="headercart-items"></div>
+</div>
+<?php if ($_items_count > 0): ?>
+    <script type="text/javascript">
+        var headerCart = {
+            target: null,
+            state: 'hidden',
+            getItems: function () {
+                var target = this.getTarget();
+                if (target) {
+                    jQuery.post("<?php echo Mage::getBaseUrl() ?>header-cart", function (data) {
+                        target.html(data);
+                    });
+                }
+            },
+            showItems: function () {
+                if (this.state == 'hidden') {
+                    this.getItems();
+                    this.getTarget().show().addClass('visible');
+                    this.state = 'visible';
+                }
+            },
+            hideItems: function () {
+                if (this.state == 'visible')
+                {
+                    this.getTarget().hide().removeClass('visible');
+                    this.state = 'hidden';
+                }
+            },
+            getTarget: function ()
+            {
+                if (this.target) {
+                    return this.target;
+                } else {
+                    return jQuery('#headercart-items');
+                }
+            }
+        }
+
+        jQuery(document).ready(function () {
+            jQuery('.header-cart').hover(function () {
+                headerCart.showItems();
+            }, function () {
+                headerCart.hideItems();
+            });
+        });
+
+    </script>
+<?php endif; ?>

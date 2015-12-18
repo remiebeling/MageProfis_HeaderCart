@@ -1,0 +1,11 @@
+<config>
+   <modules>
+      <MageProfis_HeaderCart>
+         <active>true</active>
+         <codePool>local</codePool>
+         <depends>
+             <Webcomm_MagentoBoilerplate />
+         </depends>
+      </MageProfis_HeaderCart>
+   </modules>
+</config>

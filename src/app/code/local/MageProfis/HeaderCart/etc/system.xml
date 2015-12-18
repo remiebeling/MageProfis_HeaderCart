@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <mageprofis translate="label" module="core">
+            <label>Mageprofis</label>
+            <sort_order>100</sort_order>
+        </mageprofis>
+    </tabs>
+    <sections>
+        <headercart translate="label" module="core">
+            <label>Header Cart</label>
+            <tab>mageprofis</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>90</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>Header Cart Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <title translate="label">
+                            <label>Alternative Title</label>
+                            <comment>if empty "cart" will be displayed</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                    </fields>
+                </general>
+            </groups>
+        </headercart>
+    </sections>
+</config>
