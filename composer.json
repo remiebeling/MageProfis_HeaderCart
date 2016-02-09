@@ -1,0 +1,26 @@
+{
+  "name": "mageprofis/headercart",
+  "license": "GPL-3.0",
+  "type": "magento-module",
+  "description": "Magento Header Cart",
+  "homepage": "https://github.com/remiebeling/MageProfis_HeaderCart",
+  "require": {
+    "php": ">=5.3"
+  },
+  "suggest": {
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "authors": [
+    {
+      "name": "Remi Ebeling",
+      "email": "remi@mage-profis.de",
+      "role": "Author/Maintainer"
+    },
+    {
+      "name": "Adam Varga",
+      "email": "adam@mage-profis.de",
+      "role": "Author/Maintainer"
+    }
+  ]
+}
+ 
