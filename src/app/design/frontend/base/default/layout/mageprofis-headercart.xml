@@ -12,7 +12,7 @@
     </default>
 
     <mageprofis_headercart_index_index>
-        <block type="checkout/cart_sidebar" name="cart.header.items" template="checkout/cart/headercart/items.phtml" output="toHtml">
+        <block type="mpheadercart/cart" name="cart.header.items" template="checkout/cart/headercart/items.phtml" output="toHtml">
             <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/headercart/item/default.phtml</template></action>
             <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/headercart/item/default.phtml</template></action>
             <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/headercart/item/default.phtml</template></action>

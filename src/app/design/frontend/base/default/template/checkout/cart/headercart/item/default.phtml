@@ -130,10 +130,10 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
                         <?php endif; ?>
                         <?php if (Mage::helper('weee')->typeOfDisplay($_item, 2, 'sales')): ?>
                             <span class="nobr"><?php echo Mage::helper('weee')->__('Total incl. tax'); ?>:<br /> <?php echo $this->helper('checkout')->formatPrice($_incl + Mage::helper('weee')->getWeeeTaxInclTax($_item)); ?></span>
-                            <?php endif; ?>
                         <?php endif; ?>
                     <?php endif; ?>
-                <?php endif; //Can apply MSRP ?>
+                <?php endif; ?>
+            <?php endif; //Can apply MSRP ?>
         </div>
     </div>
 </li>

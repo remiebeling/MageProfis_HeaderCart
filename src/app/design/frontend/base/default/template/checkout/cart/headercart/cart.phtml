@@ -1,12 +1,15 @@
 <?php $_items_count = Mage::helper('checkout/cart')->getItemsCount(); ?>
-<div class="header-cart col-md-2">
+<div class="header-cart">
     <div class="cart-heading">
-        <a href="<?php echo Mage::helper('checkout/cart')->getCartUrl(); ?>" class="title">
+        <a href="<?php echo Mage::helper('checkout/url')->getCartUrl(); ?>" class="title go-to-cart">
             <?php echo $this->getCartTitle(); ?>
         </a>
-        <span class="amount">
-            <?php echo Mage::helper('core')->currency($this->getSubtotal(true), true, false); ?> 
-        </span>
+        <a href="<?php echo Mage::helper('checkout/url')->getCheckoutUrl(); ?>" class="go-to-checkout">
+            <?php echo $this->__('Go To Checkout'); ?>
+        </a>
+        <?php if ($this->getSummaryCount() > 0): ?>
+            <span class="items"><?php echo $this->getSummaryCount(); ?></span>
+        <?php endif; ?>
     </div>
     <div id="headercart-items"></div>
 </div>
@@ -54,6 +57,5 @@
                 headerCart.hideItems();
             });
         });
-
     </script>
 <?php endif; ?>
