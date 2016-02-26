@@ -1,15 +1,12 @@
 <?php $_items_count = Mage::helper('checkout/cart')->getItemsCount(); ?>
-<div class="header-cart">
+<div class="header-cart col-md-2">
     <div class="cart-heading">
-        <a href="<?php echo Mage::helper('checkout/url')->getCartUrl(); ?>" class="title go-to-cart">
+        <a href="<?php echo Mage::helper('checkout/cart')->getCartUrl(); ?>" class="title">
             <?php echo $this->getCartTitle(); ?>
         </a>
-        <a href="<?php echo Mage::helper('checkout/url')->getCheckoutUrl(); ?>" class="go-to-checkout">
-            <?php echo $this->__('Go To Checkout'); ?>
-        </a>
-        <?php if ($this->getSummaryCount() > 0): ?>
-            <span class="items"><?php echo $this->getSummaryCount(); ?></span>
-        <?php endif; ?>
+        <span class="amount">
+            <?php echo Mage::helper('core')->currency($this->getSubtotal(true), true, false); ?>
+        </span>
     </div>
     <div id="headercart-items"></div>
 </div>
@@ -18,17 +15,22 @@
         var headerCart = {
             target: null,
             state: 'hidden',
+            response: null,
             getItems: function () {
                 var target = this.getTarget();
                 if (target) {
+                    var self = this;
                     jQuery.post("<?php echo Mage::getBaseUrl() ?>header-cart", function (data) {
-                        target.html(data);
+                        self.response = data;
+                        target.html(self.response);
                     });
                 }
             },
             showItems: function () {
                 if (this.state == 'hidden') {
-                    this.getItems();
+                    if (!this.response) {
+                        this.getItems();
+                    }
                     this.getTarget().show().addClass('visible');
                     this.state = 'visible';
                 }
@@ -42,11 +44,10 @@
             },
             getTarget: function ()
             {
-                if (this.target) {
-                    return this.target;
-                } else {
-                    return jQuery('#headercart-items');
+                if (!this.target) {
+                    this.target = jQuery('#headercart-items');
                 }
+                return this.target;
             }
         }
 
@@ -57,5 +58,6 @@
                 headerCart.hideItems();
             });
         });
+
     </script>
 <?php endif; ?>
