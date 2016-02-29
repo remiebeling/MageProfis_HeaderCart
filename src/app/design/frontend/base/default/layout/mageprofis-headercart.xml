@@ -7,10 +7,10 @@
             </action>
         </reference>
         <reference name="top.container">
-            <block type="headercart/cart" name="header.cart" template="checkout/cart/headercart/cart.phtml" />
+            <block type="mpheadercart/cart" name="header.cart" template="checkout/cart/headercart/cart.phtml" />
         </reference>
     </default>
-    
+
     <mageprofis_headercart_index_index>
         <block type="checkout/cart_sidebar" name="cart.header.items" template="checkout/cart/headercart/items.phtml" output="toHtml">
             <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/headercart/item/default.phtml</template></action>

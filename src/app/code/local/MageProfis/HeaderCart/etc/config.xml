@@ -7,32 +7,32 @@
     </modules>
     <global>
         <helpers>
-            <headercart>
+            <mpheadercart>
                 <class>MageProfis_HeaderCart_Helper</class>
-            </headercart>
+            </mpheadercart>
         </helpers>
         <models>
-            <headercart>
+            <mpheadercart>
                 <class>MageProfis_HeaderCart_Model</class>
-            </headercart>
+            </mpheadercart>
         </models>
         <blocks>
-            <headercart>
+            <mpheadercart>
                 <class>MageProfis_HeaderCart_Block</class>
-            </headercart>
+            </mpheadercart>
         </blocks>
         <events>
             <core_layout_update_updates_get_after>
                 <observers>
                     <mageprofis_headercart_add_layout_updates>
-                        <type>singleton</type>
-                        <class>headercart/observer</class>
+                        <class>mpheadercart/observer</class>
                         <method>addLayoutXml</method>
                     </mageprofis_headercart_add_layout_updates>
                 </observers>
             </core_layout_update_updates_get_after>
         </events>
     </global>
+
     <frontend>
         <routers>
             <mageprofis_headercart>
@@ -44,6 +44,7 @@
             </mageprofis_headercart>
         </routers>
     </frontend>
+
     <adminhtml>
         <acl>
             <resources>
@@ -53,7 +54,7 @@
                             <children>
                                 <config>
                                     <children>
-                                        <headercart>
+                                        <headercart translate="title" module="mpheadercart">
                                             <title>Header Cart</title>
                                         </headercart>
                                     </children>

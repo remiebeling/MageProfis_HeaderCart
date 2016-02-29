@@ -7,7 +7,7 @@
         </mageprofis>
     </tabs>
     <sections>
-        <headercart translate="label" module="core">
+        <headercart translate="label" module="mpheadercart">
             <label>Header Cart</label>
             <tab>mageprofis</tab>
             <frontend_type>text</frontend_type>
@@ -16,7 +16,7 @@
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
             <groups>
-                <general translate="label">
+                <general translate="label" module="mpheadercart">
                     <label>Header Cart Settings</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>10</sort_order>
@@ -24,9 +24,9 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-                        <title translate="label">
+                        <title translate="label comment" module="mpheadercart">
                             <label>Alternative Title</label>
-                            <comment>if empty "cart" will be displayed</comment>
+                            <comment>If empty, "cart" will be displayed</comment>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
