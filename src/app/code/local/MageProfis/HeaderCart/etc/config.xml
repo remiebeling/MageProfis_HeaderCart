@@ -43,6 +43,15 @@
                 </args>
             </mageprofis_headercart>
         </routers>
+        <translate>
+            <modules>
+                <MageProfis_HeaderCart>
+                    <files>
+                        <default>MageProfis_HeaderCart.csv</default>
+                    </files>
+                </MageProfis_HeaderCart>
+            </modules>
+        </translate>
     </frontend>
 
     <adminhtml>
